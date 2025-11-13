@@ -1,0 +1,74 @@
+.demo-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card-grid {
+  container-type: inline-size;
+  container-name: cardgrid;
+  resize: horizontal;
+  overflow: auto;
+  border: 2px dashed #ccc;
+  padding: 2rem;
+  min-width: 250px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  p {
+    padding: 0 1rem 1rem;
+    color: #666;
+  }
+}
+
+@container cardgrid (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: 
+      "image title"
+      "image content";
+
+    img {
+      grid-area: image;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h3 {
+      grid-area: title;
+    }
+
+    p {
+      grid-area: content;
+    }
+  }
+}
+
+@container cardgrid (min-width: 600px) {
+  .card {
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}

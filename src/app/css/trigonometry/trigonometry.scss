@@ -1,0 +1,49 @@
+.demo-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.circle-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.circle-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  
+  --angle: calc((var(--index) / var(--total)) * 360deg);
+  --distance: 150px;
+  
+  transform: 
+    rotate(var(--angle)) 
+    translateY(calc(-1 * var(--distance))) 
+    rotate(calc(-1 * var(--angle)));
+  
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: 
+      rotate(var(--angle)) 
+      translateY(calc(-1 * var(--distance) - 10px)) 
+      rotate(calc(-1 * var(--angle)))
+      scale(1.2);
+  }
+}

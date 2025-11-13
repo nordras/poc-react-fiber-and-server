@@ -1,0 +1,58 @@
+.demo-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+.viewport-demo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.box {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 200px;
+  position: relative;
+
+  span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+
+  small {
+    color: #666;
+    font-size: 0.875rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    border-radius: 2px;
+  }
+
+  &.vh::after {
+    background: #ef4444;
+  }
+
+  &.dvh::after {
+    background: #3b82f6;
+  }
+
+  &.svh::after {
+    background: #10b981;
+  }
+}
