@@ -4,7 +4,7 @@ A web development laboratory exploring React Fibers architecture, React Server C
 
 ## Live Demo
 
-🔗 [View Project](https://web-lab.vercel.app)
+🔗 [View Project](https://web-lab-mocha.vercel.app)
 
 ## What's Inside
 
